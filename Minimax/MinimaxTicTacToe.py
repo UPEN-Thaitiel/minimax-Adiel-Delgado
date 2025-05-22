@@ -25,17 +25,32 @@ class TicTacToe:
         #   | X | O
         # --+---+--
         # O |   | X
+        print(self.board[1] +'|'+ self.board[2] + '|' + self.board[3])
+        print('--+--+--')
+        print(self.board[4] +'|'+ self.board[5] + '|' + self.board[6])
+        print('--+--+--')
+        print(self.board[7] +'|'+ self.board[8] + '|' + self.board[9])
+        print('--+--+--')
+        print('\n')
         pass
 
     def is_cell_free(self, position):
         # Challenge 3: Return True if the cell at 'position' is empty (' ')
         # Otherwise, return False
+        if self.board == ' ':
+            return True
+        return False
         pass
 
     def update_player_position(self, player, position):
         # Challenge 4: If the cell at 'position' is free, place 'player' symbol there
         # If the cell is occupied, print an error and ask the player to input again
         # After updating the board, check if the game ended (win or draw)
+        if self.is_cell_free(position):
+            self.board(position) = player
+        else:
+            print("ERROR: Cannot Insert Here!")
+            self.move_player
         pass
 
     def is_winning(self, player):
